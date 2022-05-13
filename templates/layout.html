@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="jumbotron p-3">
+    <div class="well text-center">
+        <h1>Telephone Directory </h1> 
+    </div> 
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col md-6">
+                <div class="jumbotron p-3 text-center">
+                    <a href="{{ url_for('add') }}">
+                        <button class="btn btn-primary" type="btn btn-primary">Add</button>
+                    </a>
+                    <a href="{{ url_for('display') }}">
+                        <button class="btn btn-secondary" type="btn btn-secondary">Display</button>
+                    </a>
+                    <a href="{{ url_for('search') }}">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

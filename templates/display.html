@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% include 'layout.html' %}
+{% block body %}
+
+<div class="container">
+	<div class="row">
+		<div class="col md-6">
+			<div class="jumbotron p-3">
+				<div class="modal-header">
+					<h4 class="modal-title">Contact you Added is displayed here</h4>
+	 			</div>
+				<table class="table table-striped table-dark">
+					<thead>
+						<tr>
+							<th scope="col">NAME</th>
+							<th scope="col">NUMBER</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for i, j in d.items() %}
+							{% if i!= None and j!=None %}
+						<tr>
+							<td><ol><li>{{i}}</li></ol></td>
+							<td>{{j}}</td>
+							</tr>
+					</tbody>
+					{% endif %}
+					{% endfor %}
+				</table>	
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

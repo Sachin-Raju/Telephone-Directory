@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% include 'layout.html' %}
+{% block body %}
+
+<div class="container">
+      <div class="row">
+            <div class="col md-6">
+                  <div class="modal-header">
+                        <h4 class="modal-title">Add a new contact</h4>
+                  </div>
+                        <form action="{{url_for('search')}}"method="post"><br>
+                              <div class="form-group">
+                                    <label>Enter your name: </label>
+                                          <input type="text" class="form-control" name="name"><br>
+                              
+                                          <input type="Submit" value="Enter"><br><br>
+                        </form>
+                              {% if name in d.keys()%}
+                                    <h2>The Name you have searched is Displayed</h2><br>
+                                    NAME :{{name}}<br><br>
+                                    NUMBER:{{d[name]}}
+                              {% endif %}
+                              {% if name not in d.keys() %}
+                                    <h3> Sorry there is no contact added</h3>
+                                    <h4> Thank You </h4>
+                              {% endif %}
+            </div>
+      </div>
+</div>
+
+{% endblock %}
